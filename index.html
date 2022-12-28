@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>逢甲大學圖書館系統</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <a href="https://web.lib.fcu.edu.tw/library/" target="_blank">
+      <img src="logo.png" class="rounded mx-auto d-block" alt=""
+    /></a>
+    <div class="row">
+      <div class="col-2">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active"
+            id="list-teacher-list"
+            data-bs-toggle="list"
+            href="#list-teacher"
+            role="tab"
+            aria-controls="list-teacher"
+            >教師</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-staff-list"
+            data-bs-toggle="list"
+            href="#list-staff"
+            role="tab"
+            aria-controls="list-staff"
+            >職員</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-student-list"
+            data-bs-toggle="list"
+            href="#list-student"
+            role="tab"
+            aria-controls="list-student"
+            >學生</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-retire-list"
+            data-bs-toggle="list"
+            href="#list-retire"
+            role="tab"
+            aria-controls="list-retire"
+            >退休人員</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-visitor-list"
+            data-bs-toggle="list"
+            href="#list-visitor"
+            role="tab"
+            aria-controls="list-visitor"
+            >校友與訪客</a
+          >
+          <a
+            class="list-group-item list-group-item-action"
+            id="list-member-list"
+            data-bs-toggle="list"
+            href="#list-member"
+            role="tab"
+            aria-controls="list-member"
+            >圖書館會員</a
+          >
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="list-teacher"
+            role="tabpanel"
+            aria-labelledby="list-teacher-list"
+          >
+            <h3>借閱說明</h3>
+            <p>
+              借閱資料時，可先利用逢甲大學圖書館館藏目錄查詢系統檢索，若有查獲，請根據「索書號」取得資料後，攜帶教職員證至圖書館一樓自助借書機自行辦理借用
+              ( 一般紙本圖書 )
+              ，多媒體資料請至一樓流通櫃檯辦理借用。借用的資料數量、借期等，列表如下：
+            </p>
+            <br />
+            <h6>專任教職員</h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>100冊/35天</td>
+                  <td>4次</td>
+                  <td>15冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">100冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>15片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h6>
+              兼任教職員、約聘人員、訪問學者(客座教師)、建教專案非本校聘用之人員
+            </h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>75冊/21天</td>
+                  <td>3次</td>
+                  <td>10冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">75冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>10片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/faculty/borrowing.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-staff"
+            role="tabpanel"
+            aria-labelledby="list-staff-list"
+          >
+            <h3>借閱說明</h3>
+            <p>
+              借閱資料時，可先利用逢甲大學圖書館館藏目錄查詢系統檢索，若有查獲，請根據「索書號」取得資料後，攜帶教職員證至圖書館一樓自助借書機自行辦理借用
+              ( 一般紙本圖書 )
+              ，多媒體資料請至一樓流通櫃檯辦理借用。借用的資料數量、借期等，列表如下：
+            </p>
+            <br />
+            <h6>專任教職員</h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>100冊/35天</td>
+                  <td>4次</td>
+                  <td>15冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">100冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>15片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h6>
+              兼任教職員、約聘人員、訪問學者(客座教師)、建教專案非本校聘用之人員
+            </h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>75冊/21天</td>
+                  <td>3次</td>
+                  <td>10冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">75冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>10片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/staff/borrowing.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-student"
+            role="tabpanel"
+            aria-labelledby="list-student-list"
+          >
+            <h3>借閱說明</h3>
+            <p>
+              借閱資料時，可先利用逢甲大學圖書館館藏目錄查詢系統檢索，若有查獲，請根據「索書號」取得資料後，攜帶教職員證至圖書館一樓自助借書機自行辦理借用
+              ( 一般紙本圖書 )
+              ，多媒體資料請至一樓流通櫃檯辦理借用。借用的資料數量、借期等，列表如下：
+            </p>
+            <br />
+            <h6>研究生（含準研究生、碩士生、博士生）</h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>100冊/35天</td>
+                  <td>4次</td>
+                  <td>15冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">100冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>15片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h6>大學部學生、海訓班學生、語言中心學生、交換學生</h6>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用冊數/借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約冊數/保留時間</th>
+                  <th scope="col">逾期罰款</th>
+                  <th scope="col">總借閱冊數</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">一般圖書</th>
+                  <td>75冊/21天</td>
+                  <td>3次</td>
+                  <td>10冊/5天</td>
+                  <td>5元/日</td>
+                  <td rowspan="4">75冊</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>10片/7天</td>
+                  <td>1次</td>
+                  <td>5件/3天</td>
+                  <td>10元/日</td>
+                </tr>
+                <tr>
+                  <th scope="row">指定參考書</th>
+                  <td>2冊/3小時</td>
+                  <td>不可續借</td>
+                  <td>不可預約</td>
+                  <td>5元/時</td>
+                </tr>
+                <tr>
+                  <th scope="row">討論室</th>
+                  <td>1間/3小時</td>
+                  <td>不可續借</td>
+                  <td>1間15分鐘</td>
+                  <td>10元/時</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/student/borrowing.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-retire"
+            role="tabpanel"
+            aria-labelledby="list-retire-list"
+          >
+            <h3>借閱說明</h3>
+            <p>
+              啟用退休教職員工借用圖書服務，需由本人親自持教職員證至圖書館一樓流通櫃檯辦理讀者檔更新作業。借閱資料時，可先利用逢甲大學圖書館館藏目錄查詢系統檢索，若有查獲，請依據「索書號」取得資料後，攜帶教職員證至本館一樓自助借書機自行辦理借用
+              ( 一般紙本圖書 )
+              ，多媒體資料請至一樓流通櫃檯辦理借用。借用的資料數量、借期等，列表如下:
+            </p>
+            <br />
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">資源類型</th>
+                  <th scope="col">借用數量*</th>
+                  <th scope="col">借期</th>
+                  <th scope="col">續借次數</th>
+                  <th scope="col">預約</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">圖書</th>
+                  <td rowspan="2">總數以5冊(件)為限</td>
+                  <td>14天</td>
+                  <td>1次</td>
+                  <td>不可預約</td>
+                </tr>
+                <tr>
+                  <th scope="row">多媒體資料</th>
+                  <td>7天</td>
+                  <td>1次</td>
+                  <td>不可預約</td>
+                </tr>
+                <tr>
+                  <td colspan="5">* 所有資源借用總數量以 5 冊（件）為限。</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/other/retirement_application.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-visitor"
+            role="tabpanel"
+            aria-labelledby="list-visitor-list"
+          >
+            <h3>進館資訊</h3>
+            <p>
+              除了申請為圖書館會員外，本館亦開放同時間 50
+              個名額，提供使用者登記進館，但不提供資料出借服務，唯使用者必須年滿
+              18
+              歲以上。進館時，請持身份證、或駕照、或健保卡(有照片者)、或學生證(有蓋當學年註冊章者)，於圖書館入口處先行換證。
+            </p>
+
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/other/enter_information.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-member"
+            role="tabpanel"
+            aria-labelledby="list-member-list"
+          >
+            <h3>圖書館會員</h3>
+            <p>
+              逢甲大學圖書館為推動書香社會，因應社區民眾需求，在原先同時段 50
+              位校外人士排隊進館的限制下，另外規劃申請圖書館會員總額 300
+              位名額可憑證進館， 社會人士可依本館規定程序申請入會。
+            </p>
+            <br />
+            <a
+              href="https://web.lib.fcu.edu.tw/library/services/other/member_application.html"
+              target="_blank"
+              >了解更多...</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
